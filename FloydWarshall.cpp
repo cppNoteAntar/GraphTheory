@@ -42,6 +42,14 @@ int lcm(int a, int b) {return (a / __gcd(a, b)) * b;}
 bool isPrime(int n) {if (n <= 1) return false;if (n == 2) return true;if (n % 2 == 0) return false;for (int i = 3; i * i <= n; i += 2) {if (n % i == 0) return false;}return true;}
 
 
+
+////////////////// main concept
+
+// Either the shortest path from i to j doesn’t go through k → keep dist[i][j]
+// Or it goes through k → dist[i][j] can be improved via dist[i][k] + dist[k][j]
+
+
+
 const int N = 2005;
 int n,m;
 vector< pair<int,int> > G[N]; // (node, wt);
@@ -49,6 +57,9 @@ vector< pair<int,int> > G[N]; // (node, wt);
 int dist[N][N];
 
 // problem: Shortest Routes II
+
+
+
 
 void solve(){
     for(int i = 0;i<N;++i){
@@ -112,4 +123,5 @@ int32_t main() {
         solve();
         cout << endl;
     }
+
 }
