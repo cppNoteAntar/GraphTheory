@@ -48,6 +48,22 @@ bool isPrime(int n) {if (n <= 1) return false;if (n == 2) return true;if (n % 2 
 // Either the shortest path from i to j doesn’t go through k → keep dist[i][j]
 // Or it goes through k → dist[i][j] can be improved via dist[i][k] + dist[k][j]
 
+// Process with k
+
+// Start: only direct edges are known.
+
+// For k = 1, we allow paths that go through node 1.
+
+// For k = 2, we allow paths that go through nodes {1, 2}.
+
+// For k = 3, we allow paths that go through nodes {1, 2, 3}.
+
+// Continue until all nodes have been used.
+
+
+
+
+
 
 
 const int N = 2005;
@@ -125,3 +141,4 @@ int32_t main() {
     }
 
 }
+
